@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear una Cuenta</title>
+    <link rel="stylesheet" href="css\segundoStyle.css">
+
+</head>
+<body>
+    <div class="steps-container">
+        <form action="tercerPaso.html">
+        <div class="steps">
+            <div class="step">
+                <span>1</span>
+                <p>Creacion de Cuenta</p>
+            </div>
+            <div class="step">
+                <span>2</span>
+                <p>Perfil de Cuenta Social</p>
+            </div>
+            <div class="step">
+                <span>3</span>
+                <p>Detalles Personales</p>
+            </div>
+        </div>
+    </div>
+<div class="container">
+        <h2>Ingrese detalles a su Cuenta Social</h2>
+        <p>Segundo Paso</p>
+        <label for="nombre"> Ingrese su nombre completo </label>
+            <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+
+            <label for="edad">Ingrese su edad </label>
+            <input type="number" id="edad" name="edad" min="1" max="120" placeholder="Escribe tu edad" required>
+
+            <label for="fecha-nacimiento">Ingrese su fecha de nacimiento</label>
+            <input type="date" id="fecha-nacimiento" name="fecha-nacimiento">
+
+            <!-- Select con opciones -->
+            <label for="genero"> Ingrese su genero </label>
+            <select id="genero" name="genero">
+                <option value="">Selecciona una opción</option>
+                <option value="femenino">Femenino</option>
+                <option value="masculino">Masculino</option>
+                <option value="otro">Otro</option>
+                <option value="prefiero-no-decirlo">Prefiero no decirlo</option>
+            </select>
+
+            <!-- Radio buttons -->
+            <label for="estado-civil"> Estado Civil </label> 
+            <div class="radio-group">
+                 <input type="radio" id="soltero" name="estado-civil" value="soltero">
+                 <label for="soltero">Soltero/a</label>
+ 
+                 <input type="radio" id="casado" name="estado-civil" value="casado">
+                 <label for="casado">Casado/a</label>
+ 
+                 <input type="radio" id="otro-estado-civil" name="estado-civil" value="otro">
+                 <label for="otro-estado-civil">Otro</label>
+            </div>
+
+        <button type="submit">Proximo Paso</button>
+    </form>
+    </div>
+</div>
+</body>

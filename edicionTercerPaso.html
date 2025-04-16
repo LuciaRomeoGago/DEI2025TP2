@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles de Usuario</title>
+    <link rel="stylesheet" href="css/edicionStyle.css">
+</head>
+<body>
+    <div class="steps-container">
+        <div class="steps">
+            <div class="step">
+                <span>1</span>
+                <p>Creacion de Cuenta</p>
+            </div>
+            <div class="step">
+                <span>2</span>
+                <p>Perfil de Cuenta Social</p>
+            </div>
+            <div class="step">
+                <span>3</span>
+                <p>Detalles Personales</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Modifique sus Detalles Personales</h2>
+        <p>Tercer Paso</p>
+    <div id="formulario-edicion">
+        <form id="editForm">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="edad">Edad</label>
+            <input type="number" id="edad" name="edad" min="1" max="120" required>
+
+            <label for="fecha-nacimiento">Fecha de Nacimiento</label>
+            <input type="date" id="fecha-nacimiento" name="fecha-nacimiento">
+
+            <label for="genero">Género</label>
+            <select id="genero" name="genero">
+                <option value="">Selecciona una opción</option>
+                <option value="femenino">Femenino</option>
+                <option value="masculino">Masculino</option>
+                <option value="otro">Otro</option>
+                <option value="prefiero-no-decirlo">Prefiero no decirlo</option>
+            </select>
+
+            <label for="estado-civil">Estado Civil</label>
+        <div class="radio-group">
+            <input type="radio" id="soltero" name="estado-civil" value="soltero">
+            <label for="soltero">Soltero/a</label>
+
+            <input type="radio" id="casado" name="estado-civil" value="casado">
+            <label for="casado">Casado/a</label>
+
+            <input type="radio" id="otro-estado-civil" name="estado-civil" value="otro">
+            <label for="otro-estado-civil">Otro</label>
+          </div>
+
+            <button type="submit">Guardar Cambios</button>
+        </form>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

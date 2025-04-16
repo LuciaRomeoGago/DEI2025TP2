@@ -1,0 +1,145 @@
+body {
+    font-family: sans-serif;
+    background: linear-gradient(to bottom, #F2D7BC, #d58067);
+    margin: 0; /*elimina margen predeterminado por el navegador*/
+    display: flex; /*permite organizar elementos internos flexiblemente*/ 
+    flex-direction: column; /*pone a hijos (steps-c y c, en columna, 1 encima del otro*/
+    justify-content: center; /*centra hijos verticalmente*/
+    align-items: center; /*centra hijos horizontalmente*/
+    min-height: 100vh; /*asegura que body ocupe al menos el 100$ de la altura de la ventana
+                        del navegador*/
+}
+
+.steps-container { 
+    width: 80%; /* ancho del contenedor de padre(body)*/
+    max-width: 600px; /* Ancho  para contenedor, evita que se haga muy ancho en
+                        pantallas grandes */
+    margin-bottom: 20px; /* Espacio entre los steps y el formulario */
+    position: relative; /* Para posicionar la línea dentro de el de forma absoluta*/
+    display: flex; /*contenedor flexible*/
+    justify-content: center; /* Centramos los steps horizontalmente */
+}
+
+.steps {
+    display: flex;
+    justify-content: space-around; /*distribuye hijos para que haya mismo espacio entre
+                                    ellos*/
+    position: relative; /* Necesario para el posicionamiento absoluto de los span */
+    width: 100%; /* Los steps ocupan todo el ancho del papi (steps-c) */
+}
+
+.steps::before { /*pseudoelemento, no entra en el DOM*/
+    content: ""; /*aunque este vacio es necesario para que se muestre*/
+    position: absolute; /*antes dicho, forma absoluta dentro de elemento padre*/
+    top: 30%; /*posiciona linea 30% de la parte superior del contenedor .steps*/
+    left: 15%; /*incia linea al 15$ de lado izq del contenedor .steps*/
+    right: 15%; /*idem pero lado der*/
+    height: 2px; /*altura de la linea*/
+    background-color: white; 
+    z-index: 0; /*asegura que este drtras de elementos .steps*/
+}
+
+.step {
+    width: auto; /*ancho aumtomatico segun contenido*/
+    position: relative; /* Para el z-index del span */
+    z-index: 1; /* Asegura que el cuadrado esté encima de la línea */
+    text-align: center; 
+    margin: 0 15px; /*elimina margen vertical y anade margen horizontal a c/lado del
+                     paso, separandolos*/
+}
+
+.step span {
+    background-color: white; 
+    border: 2px solid white; /*2 pixeles de grosor + borde blanco*/
+    display: block; /*span ocupa todo el ancho disponible dentro de contenedor padre
+                     y crea salto de linea antes y despues*/
+    width: 30px;
+    height: 30px;
+    line-height: 30px; /*establce altura de la linea igual a altura del elemento*/
+    border-radius: 15%;
+    margin: 0 auto 5px; /*centra y anade margen inferior de 5px para separarlo del texto*/
+    color: black; /* Color del número */
+}
+
+.step:nth-child(1) span {
+    background-color: #28a745;
+    color: white;
+    border-color: #28a745;
+}
+
+.step p {
+    margin: 0; /*elimina margen predeterminado del parrafo*/
+    font-size: 12px;
+    line-height: 1.2; /*Establece la altura de la línea del texto en 1.2 veces 
+                        el tamaño de la fuente, mejorando la legibilidad.*/
+    color: white; 
+}
+
+.container {
+    background-color: white;
+    border-radius: 8px; 
+    padding: 20px; /*espacio interior alrededor del contenido del contenedor*/
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /*color negro con opacidad del 10%*/
+    width: 300px;
+    text-align: center;
+}
+
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Cambia el modelo de caja para que el `padding` y el `border` se incluyan 
+                             dentro del `width` y `height` definidos, evitando que los elementos se hagan más grandes de lo esperado. */
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px; /*espacio 10 arriba y abajo, 20 costados*/
+    border: none; /*sin borde predeterminado del boton*/
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    position: relative; /*relativa para poder posicionar el pseudo-elemento `::before` dentro. */
+}
+
+button::before { /*otro pseudoelemento*/
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: white; /* Color de la línea */
+    transition: width 0.3s ease-in-out; /* Define  transición suave Dura 0.3 segundos y tiene aceleración suave al inicio y al final. 
+                                         no se si cuenta como animacion, es mas transicion*/
+}
+
+button:hover::before { /*pseudoclase (hover, cuando coloco cursor sobre el boton) 
+                        y pseudoelemento (before, elemento virtual, la linea como deco)*/
+    width: 100%; /* línea se extiende al 100% del ancho al pasar el ratón */
+}
+
+h2 {
+    margin: 0 0 10px;
+    font-size: 18px;
+}
+
+p {
+    margin: 0 0 20px;
+    color: #666;
+    font-size: 14px;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin: 5px 0 3px;
+    font-size: 14px;
+    color: #444;
+}
