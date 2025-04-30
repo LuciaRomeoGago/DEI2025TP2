@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalles de Usuario</title>
+    <script defer src="js/scriptEdicion.js"></script>
     <link rel="stylesheet" href="css/edicionStyle.css">
 </head>
 <body>
@@ -46,23 +47,25 @@
                 <option value="prefiero-no-decirlo">Prefiero no decirlo</option>
             </select>
 
-            <label for="estado-civil">Estado Civil</label>
-        <div class="radio-group">
-            <input type="radio" id="soltero" name="estado-civil" value="soltero">
-            <label for="soltero">Soltero/a</label>
 
-            <input type="radio" id="casado" name="estado-civil" value="casado">
-            <label for="casado">Casado/a</label>
-
-            <input type="radio" id="otro-estado-civil" name="estado-civil" value="otro">
-            <label for="otro-estado-civil">Otro</label>
-          </div>
+            <fieldset class="radio-group">
+                <legend>Estado Civil:</legend>
+                <label>
+                    <input type="radio" id="soltero" name="estado-civil" value="soltero"> Soltero/a
+                </label>
+                <label>
+                    <input type="radio" id="casado" name="estado-civil" value="casado"> Casado/a
+                </label>
+                <label>
+                    <input type="radio" id="otro-estado-civil" name="estado-civil" value="otro"> Otro
+                </label>
+            </fieldset>
 
             <button type="submit">Guardar Cambios</button>
         </form>
     </div>
     </div>
 
-    <script src="script.js"></script>
+
 </body>
 </html>

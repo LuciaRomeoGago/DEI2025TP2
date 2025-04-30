@@ -146,3 +146,32 @@ label {
     font-size: 14px;
     color: #444;
 }
+
+fieldset.radio-group {
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+    padding: 15px; 
+    margin: 10px 0 20px; 
+    text-align: left; 
+}
+
+fieldset.radio-group legend {
+    font-size: 14px; 
+    color: #444; 
+    padding: 0 5px; 
+    margin-bottom: 10px; 
+    display: inline-block; 
+    width: auto; 
+    border-bottom: none; 
+}
+
+fieldset.radio-group label {
+    display: inline-block; 
+    margin: 5px 15px 5px 5px; 
+    vertical-align: middle;
+}
+
+fieldset.radio-group input[type="radio"] {
+    margin-right: 5px;
+    vertical-align: middle;
+}
